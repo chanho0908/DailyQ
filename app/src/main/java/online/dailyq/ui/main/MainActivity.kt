@@ -1,6 +1,5 @@
 package online.dailyq.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import online.dailyq.R
 import online.dailyq.databinding.ActivityMainBinding
@@ -10,11 +9,14 @@ import online.dailyq.ui.timeline.TimeLineFragment
 import online.dailyq.ui.today.TodayFragment
 
 class MainActivity : BaseActivity() {
+
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.navView.setOnItemSelectedListener {
             val ft = supportFragmentManager.beginTransaction()
